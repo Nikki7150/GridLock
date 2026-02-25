@@ -1,0 +1,11 @@
+#profile {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+nav {
+    background-color: pink;
+    color: black;
+    font-family:'Lucida Sans', sans-serif;
+}
