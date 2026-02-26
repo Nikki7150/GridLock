@@ -1,7 +1,7 @@
 const resetbtn = document.getElementById("resetButton");
 
 resetbtn.addEventListener("click", () => {
-    fetch("/reset", {
+    fetch("https://web-production-9f0ac4.up.railway.app/reset", {
         method: "POST"
     })
     .then(location.reload());
@@ -16,7 +16,7 @@ cells.forEach((cell, index) => {
 })
 
 function makeMove(square) {
-    fetch("/move", {
+    fetch("https://web-production-9f0ac4.up.railway.app/move", {
         method: "POST", 
         headers: {
             "Content-Type": "application/json"
@@ -55,7 +55,7 @@ const dumbCompBtn = document.getElementById("dumbComp");
 const geniusCompBtn = document.getElementById("geniusComp");
 
 multiplayerBtn.addEventListener("click", () => {
-    fetch("/set_mode", {
+    fetch("https://web-production-9f0ac4.up.railway.app/set_mode", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -68,7 +68,7 @@ multiplayerBtn.addEventListener("click", () => {
 });
 
 dumbCompBtn.addEventListener("click", () => {
-    fetch("/set_mode", {
+    fetch("https://web-production-9f0ac4.up.railway.app/set_mode", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -81,7 +81,7 @@ dumbCompBtn.addEventListener("click", () => {
 });
 
 geniusCompBtn.addEventListener("click", () => {
-    fetch("/set_mode", {
+    fetch("https://web-production-9f0ac4.up.railway.app/set_mode", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
