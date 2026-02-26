@@ -7,6 +7,7 @@ class TicTacToe:
     def __init__(self): 
         self.board = [' ' for _ in range(9)] # we will use a single list to rep 3x3 board
         self.current_winner = None # keep track of winner
+        self.winning_cells = [] # keep track of winning cells
 
     def print_board(self):
         # this is just getting the rows
@@ -41,8 +42,10 @@ class TicTacToe:
         # then return true. If invalid, return false
         if self.board[square] == ' ':
             self.board[square] = letter
-            if self.winner(square, letter): 
+            winning_combo = self.winner(square, letter)
+            if winning_combo: 
                 self.current_winner = letter
+                self.winning_cells = winning_combo
             return True
         return False
     
@@ -50,30 +53,34 @@ class TicTacToe:
         # winner if 3 in a row anywhere.. we have to check all of these!
         # check the row
         row_ind = square // 3
-        row = self.board[row_ind*3:(row_ind+1)*3]
+        row_indices = [row_ind*3, row_ind*3+1, row_ind*3+2]
+        row = [self.board[i] for i in row_indices]
         if all([spot == letter for spot in row]):
-            return True
+            return row_indices
         
         # check column
         col_ind = square % 3
-        column = [self.board[col_ind+i*3] for i in range(3)]
+        col_indices = [col_ind+i*3 for i in range(3)]
+        column = [self.board[i] for i in col_indices]
         if all([spot == letter for spot in column]):
-            return True
+            return col_indices
         
         # check diagonals
         # only if the square is an even number (0, 2, 4, 6, 8) - 
         # these are the only moves possible to win a diagonal
         if square % 2 == 0:
-            diagonal1 = [self.board[i] for i in [0, 4, 8]] # left to right diagonal``
+            diagonal1_indices = [0, 4, 8]
+            diagonal1 = [self.board[i] for i in diagonal1_indices] # left to right diagonal
             if all([spot == letter for spot in diagonal1]):
-                return True
+                return diagonal1_indices
             
-            diagonal2 = [self.board[i] for i in [2, 4, 6]] # right to left diagonal
+            diagonal2_indices = [2, 4, 6]
+            diagonal2 = [self.board[i] for i in diagonal2_indices] # right to left diagonal
             if all([spot == letter for spot in diagonal2]):
-                return True
+                return diagonal2_indices
             
         # if all of these fail
-        return False
+        return None
 
 
 def play(game, x_player, o_player, print_game=True):
@@ -136,7 +143,7 @@ if __name__ == '__main__':
         else: 
             tie += 1
     print('after 100 iterations, {x_win} X win, {o_win} O wins and {tie} ties')"""
-    x_player = RandomComputerPlayer('X')
+    x_player = HumanPlayer('X')
     o_player = GeniusComputerPlayer('O')
     t = TicTacToe()
     play(t, x_player, o_player, print_game=True)

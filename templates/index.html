@@ -4,12 +4,53 @@
         <meta charset="utf-8" />
         <title>GRIDLOCK</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
+        <link rel="icon" href="{{ url_for('static', filename='gridlock.png') }}" type="image/png" />
+        <!--google font imports-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet" />
+
     </head>
     <body>
         <nav>
+            <img src="{{ url_for('static', filename='gridlock.png') }}" alt="Gridlock Logo" id="logo"/>
             <h1>GRIDLOCK</h1>
-            <img src="pass" id="profile" />
+            <a href="" id="signIn">Sign In</a>
+            <img src="{{ url_for('static', filename='profile.png') }}" alt="Profile Icon" id="profile" style="display: none;"/>
         </nav>
+
+        <div class="main-layout">
+            <div class="modes">
+                <h1>Select a Game Mode</h1>
+                <button class="mode-btn" id="multiPlayer">Multiplayer</button>
+                <button class="mode-btn" id="dumbComp">Dumb Computer</button>
+                <button class="mode-btn" id="geniusComp">Unbeatable Computer</button>
+            </div>
+
+            <div class="contents" id="tictactoecont">
+
+
+                <!-- Game Status -->
+                <p class="status" id="status">Your turn</p>
+
+                <!-- Game Board -->
+                <div class="board" id="board">
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                    <div class="cell" data-cell></div>
+                </div>
+                
+                <!-- Reset Button -->
+                <button class="reset-btn" id="resetButton">Reset Game</button>
+            </div>
+        </div>
+
         <script src="{{ url_for('static', filename='main.js') }}"></script>
     </body>
 </html>

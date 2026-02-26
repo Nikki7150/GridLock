@@ -1,11 +1,161 @@
-#profile {
-    width: 100px;
-    height: auto;
-    cursor: pointer;
+html {
+    min-height: 100vh;
+}
+
+html, body, button {
+    margin: 0;
+    padding: 0;
+    font-family:'Indie Flower', cursive;
+    align-items: center;
+}
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    align-items: start;
+}
+
+.modes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 170px;
+    margin-left: 40px;
 }
 
 nav {
-    background-color: pink;
+    background-color: #ffc0cb;
     color: black;
-    font-family:'Lucida Sans', sans-serif;
+    font-family:'Indie Flower', cursive;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 20px;
+
+    img {
+        width: 80px;
+        height: auto;
+        cursor: pointer;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 3.5em;
+    }
+
+    a {
+        color: #fc5974;
+        text-decoration: none;
+        font-size: 1.5em;
+        border: 2px solid #fc5974;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+
+/* Game Board */
+#tictactoecont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin-right: 250px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+    gap: 150px;
+    color: black;
+    margin: 40px;
+    margin-right: 55%;
+    margin-left: 45%
+}
+  
+.cell {
+    background-color: #ecf0f1;
+    border: 2px solid #bdc3c7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5.5em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    width: 190px;
+    height: 190px;
+    color: black;
+}
+  
+.cell.taken {
+    pointer-events: none;
+    cursor: default;
+}
+  
+.cell:hover {
+    background-color: #d5dbdb;
+}
+  
+  /* Status Message */
+#status {
+    font-size: 2em;
+    margin: 0;
+    margin-top: 20px;
+}
+  
+  /* Reset Button */
+.reset-btn {
+    background-color: #fca7b5;
+    color: #fff;
+    border: none;
+    padding: 20px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20px;
+    transition: background-color 0.3s;
+}
+  
+.reset-btn:hover {
+    background-color: #f78d9e;
+}
+
+.cell.won {
+    background-color: #fcc8d0;
+    border: 2px solid #f78d9e;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(237, 168, 180, 0.8);
+    
+}
+
+.mode-btn {
+    background-color: #fca7b5;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.mode-btn:hover {
+    background-color: #f78d9e;
+}
+
+#multiPlayer.mp {
+    background-color: #dd919e;
+}
+
+#dumbComp.dc {
+    background-color: #dd919e;
+}
+
+#geniusComp.gc {
+    background-color: #dd919e;
 }
