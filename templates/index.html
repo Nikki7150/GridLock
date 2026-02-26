@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>GRIDLOCK</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}" />
-        <link rel="icon" href="{{ url_for('static', filename='gridlock.png') }}" type="image/png" />
+        <link rel="icon" href="{{ url_for('static', filename='tictactoe.png') }}" type="image/png" />
         <!--google font imports-->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,8 +13,8 @@
     </head>
     <body>
         <nav>
-            <img src="{{ url_for('static', filename='gridlock.png') }}" alt="Gridlock Logo" id="logo"/>
-            <h1>GRIDLOCK</h1>
+            <img src="{{ url_for('static', filename='tictactoe.png') }}" alt="Gridlock Logo" id="gridlock"/>
+            <h1 id="gridlock1">GRIDLOCK</h1>
             <a href="" id="signIn">Sign In</a>
             <img src="{{ url_for('static', filename='profile.png') }}" alt="Profile Icon" id="profile" style="display: none;"/>
         </nav>
@@ -50,6 +50,12 @@
                 <button class="reset-btn" id="resetButton">Reset Game</button>
             </div>
         </div>
+
+        <footer>
+            <p>&copy; 2026 GRIDLOCK. All rights reserved.</p>
+            <p>Made with ❤️ by Nishka Kanchan</p>
+            <p>Contact: <a href="mailto:kanchan.nishka@gmail.com">kanchan.nishka@gmail.com</a></p>
+        </footer>
 
         <script src="{{ url_for('static', filename='main.js') }}"></script>
     </body>

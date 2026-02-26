@@ -92,3 +92,13 @@ geniusCompBtn.addEventListener("click", () => {
 
     geniusCompBtn.classList.add("gc");
 });
+
+const gridlock = document.getElementById("gridlock");
+const gridlock1 = document.getElementById("gridlock1");
+gridlock.addEventListener("click", () => {
+    window.location.href = "/";
+});
+
+gridlock1.addEventListener("click", () => {
+    window.location.href = "/";
+});
