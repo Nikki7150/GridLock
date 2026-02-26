@@ -1,7 +1,9 @@
-from flask import Flask, render_template, url_for, request, jsonify
+from flask import Flask, render_template, request, jsonify
+from flask_cors import CORS
 from game import TicTacToe
 
 app = Flask(__name__)
+CORS(app)
 
 game = TicTacToe()
 game_mode = "human-player" # default mode
@@ -62,3 +64,6 @@ def set_mode():
     game = TicTacToe() # RESET BOARD WHEN CHANGE
 
     return jsonify({"message": "Mode set"})
+
+if __name__ == "__main__":
+    app.run()
