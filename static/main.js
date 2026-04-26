@@ -1,17 +1,21 @@
 const resetbtn = document.getElementById("resetButton");
 
 resetbtn.addEventListener("click", () => {
+    gameOver = false;
     fetch("/reset", { method: "POST" })
         .then(() => location.reload());
 });
 
+let gameOver = false;
 const cells = document.querySelectorAll("[data-cell]");
 const statusText = document.getElementById("status");
 cells.forEach((cell, index) => {
     cell.addEventListener("click", () => {
-        makeMove(index);
-    })
-})
+        if (!gameOver) {
+            makeMove(index);
+        }
+    });
+});
 
 function makeMove(square) {
     fetch("/move", {
@@ -26,6 +30,7 @@ function makeMove(square) {
         updateBoard(data.board);
 
         if (data.winner) {
+            gameOver = true;
             statusText.innerText = data.winner + " wins!";
             // Highlight winning cells
             if (data.winning_cells && Array.isArray(data.winning_cells)) {
@@ -33,8 +38,12 @@ function makeMove(square) {
                     cells[index].classList.add("won");
                 });
             }
+            cells.forEach(cell => cell.classList.add("taken"));
+
         } else if (data.tie) {
+            gameOver = true;
             statusText.innerText = "It's a tie!";
+            cells.forEach(cell => cell.classList.add("taken"));
         }
     });
 }
@@ -100,3 +109,5 @@ gridlock.addEventListener("click", () => {
 gridlock1.addEventListener("click", () => {
     window.location.href = "/";
 });
+
+
