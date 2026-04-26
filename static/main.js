@@ -1,10 +1,8 @@
 const resetbtn = document.getElementById("resetButton");
 
 resetbtn.addEventListener("click", () => {
-    fetch("/reset", {
-        method: "POST"
-    })
-    .then(location.reload());
+    fetch("/reset", { method: "POST" })
+        .then(() => location.reload());
 });
 
 const cells = document.querySelectorAll("[data-cell]");

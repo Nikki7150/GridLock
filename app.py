@@ -11,6 +11,9 @@ current_letter = "X"
 
 @app.route("/")
 def home():
+    global game, current_letter
+    game = TicTacToe()
+    current_letter = "X"
     return render_template("index.html")
 
 @app.route("/move", methods=['POST'])
