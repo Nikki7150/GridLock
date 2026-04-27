@@ -41,7 +41,7 @@ Anyways, I love it. I might add future updates to it to make it better and inclu
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/GridLock.git](https://github.com/Nikki7150/GridLock
+git clone https://github.com/Nikki7150/GridLock.git
 cd GridLock
 ```
 
