@@ -16,12 +16,6 @@ Anyways, I love it. I might add future updates to it to make it better and inclu
 - CSS
 - JavaScript
 
-## Future Additions
-- Sign-in
-- Streaks
-- Multiplayer server
-- more modes
-
 ## How to Run
 - open this project on this link: https://gridlock-6v89.onrender.com/
 - choose which mode you want to play in
@@ -36,3 +30,34 @@ Anyways, I love it. I might add future updates to it to make it better and inclu
     - after you play, wait for the computer and then proceed
 - keep playing until you or your competitor wins!
 - Have Fun!!
+
+## Set up and Run locally
+
+1. Clone the repository:
+```bash
+git clone https://github.com/YOUR_USERNAME/GridLock.git](https://github.com/Nikki7150/GridLock
+cd GridLock
+
+2. Create a virtual environment (Optional but recommended)
+python3 -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+
+3. Install dependencies
+pip install flask
+pip install -r requirements.txt
+
+4. Run the Flask app
+python app.py
+
+5. Open your browser and go to:
+http://127.0.0.1:5000/
+.. or click on the link in your terminal
+
+Now play to your hearts content!
+
+## Future Additions
+- Sign-in
+- Streaks
+- Multiplayer server
+- more modes
