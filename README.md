@@ -21,3 +21,18 @@ Anyways, I love it. I might add future updates to it to make it better and inclu
 - Streaks
 - Multiplayer server
 - more modes
+
+## How to Run
+- open this project on this link: https://gridlock-6v89.onrender.com/
+- choose which mode you want to play in
+- the user always starts the game
+- click on one of the cells
+- if multiplayer:
+    - 'x' user play first
+    - 'o' user play next on the same device
+    - so on...
+- if dumb and/or genius computer
+    - user always play first
+    - after you play, wait for the computer and then proceed
+- keep playing until you or your competitor wins!
+- Have Fun!!
