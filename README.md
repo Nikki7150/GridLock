@@ -9,6 +9,12 @@ I know i could have just made this in JavaScript and called it a day. I just wou
 and because I was in the mood to do some python and then make my life harder by converting it into a website. 
 Anyways, I love it. I might add future updates to it to make it better and include the updates listed below. Hope you guys love this game!
 
+## Future additions
+- Sign-in
+- Streaks
+- Multiplayer server
+- more modes
+
 ## Technologies used
 - Python
 - Flask
@@ -55,9 +61,3 @@ http://127.0.0.1:5000/
 .. or click on the link in your terminal
 
 Now play to your hearts content!
-
-## Future Additions
-- Sign-in
-- Streaks
-- Multiplayer server
-- more modes
