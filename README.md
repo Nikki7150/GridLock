@@ -43,21 +43,28 @@ Anyways, I love it. I might add future updates to it to make it better and inclu
 ```bash
 git clone https://github.com/YOUR_USERNAME/GridLock.git](https://github.com/Nikki7150/GridLock
 cd GridLock
+```
 
 2. Create a virtual environment (Optional but recommended)
+```bash
 python3 -m venv venv
 source venv/bin/activate   # Mac/Linux
 venv\Scripts\activate      # Windows
+```
 
 3. Install dependencies
+```
 pip install flask
 pip install -r requirements.txt
+```
 
 4. Run the Flask app
+```bash
 python app.py
+```
 
 5. Open your browser and go to:
 http://127.0.0.1:5000/
-.. or click on the link in your terminal
+... or click on the link in your terminal
 
 Now play to your hearts content!
